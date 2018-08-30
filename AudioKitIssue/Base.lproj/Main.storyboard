@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,74 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioKitIssue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-Pr-t9d">
+                                <rect key="frame" x="87.5" y="164" width="200" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="FRj-pd-Ydc"/>
+                                    <constraint firstAttribute="height" constant="84" id="bMV-8n-1aa"/>
+                                    <constraint firstAttribute="width" constant="200" id="j0Z-lL-Dmr"/>
+                                </constraints>
+                                <state key="normal" title="SETUP"/>
+                                <connections>
+                                    <action selector="onButtonSetup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeW-fP-7jS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MR4-ub-RjZ">
+                                <rect key="frame" x="87" y="248" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="kMy-D6-G2j"/>
+                                    <constraint firstAttribute="height" constant="100" id="toa-d8-Ky6"/>
+                                </constraints>
+                                <state key="normal" title="AUDIOKIT START"/>
+                                <connections>
+                                    <action selector="onStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nEz-G6-sQZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aW-a2-G4P">
+                                <rect key="frame" x="87" y="348" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8KB-qL-jDG"/>
+                                    <constraint firstAttribute="height" constant="100" id="BEd-JN-sNW"/>
+                                </constraints>
+                                <state key="normal" title="AUDIOKIT STOP"/>
+                                <connections>
+                                    <action selector="onStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y2y-gQ-5B5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoX-Gl-Cjg">
+                                <rect key="frame" x="87" y="448" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Gpr-qY-zfw"/>
+                                    <constraint firstAttribute="height" constant="100" id="OGR-ax-hKh"/>
+                                </constraints>
+                                <state key="normal" title="PLAY"/>
+                                <connections>
+                                    <action selector="onPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M20-lu-amb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uuh-Pr-t9d" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.6" id="5BG-Og-tkI"/>
+                            <constraint firstItem="KoX-Gl-Cjg" firstAttribute="centerX" secondItem="1aW-a2-G4P" secondAttribute="centerX" id="Uhe-BE-lCa"/>
+                            <constraint firstItem="MR4-ub-RjZ" firstAttribute="top" secondItem="Uuh-Pr-t9d" secondAttribute="bottom" id="cMg-s9-NFf"/>
+                            <constraint firstItem="MR4-ub-RjZ" firstAttribute="centerX" secondItem="Uuh-Pr-t9d" secondAttribute="centerX" id="dmg-xK-ZkX"/>
+                            <constraint firstItem="1aW-a2-G4P" firstAttribute="top" secondItem="MR4-ub-RjZ" secondAttribute="bottom" id="mUN-bq-XJ7"/>
+                            <constraint firstItem="Uuh-Pr-t9d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="piD-Rt-hEC"/>
+                            <constraint firstItem="KoX-Gl-Cjg" firstAttribute="top" secondItem="1aW-a2-G4P" secondAttribute="bottom" id="poR-xV-BIL"/>
+                            <constraint firstItem="1aW-a2-G4P" firstAttribute="centerX" secondItem="MR4-ub-RjZ" secondAttribute="centerX" id="q2i-fy-qOQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>

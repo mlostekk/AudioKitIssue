@@ -1,0 +1,4 @@
+platform :ios, '11.4'
+target 'AudioKitIssue' do
+ pod 'AudioKit'
+end
